@@ -1,0 +1,59 @@
+###
+GET http://localhost:8080/api/cars
+
+<> 2025-05-17T113118.200.json
+<> 2025-05-17T112843.200.json
+
+###
+
+GET http://localhost:8080/api/cars/id/1
+
+<> 2025-05-17T113144.200.json
+
+###
+
+GET http://localhost:8080/api/cars/id/42
+
+<> 2025-05-17T114129.404.txt
+
+
+
+###
+
+GET http://localhost:8080/api/cars/license-plate/B4DB0NN7
+
+<> 2025-05-17T113204.200.json
+
+###
+POST http://localhost:8080/api/cars
+Content-Type: application/json
+
+{
+  "model": "Tesla Model S",
+  "color": "White",
+  "licensePlate": "R0CK3T"
+}
+
+
+###
+PUT localhost:8080/api/cars/1
+Content-Type: application/json
+
+{
+  "model": "Fiat 400",
+  "color": "Blue",
+  "licensePlate": "ITALIANRULEZ"
+}
+
+###
+PATCH localhost:8080/api/cars/color
+Content-Type: application/json
+
+{
+  "carId": 1,
+  "color": "Green"
+}
+
+###
+DELETE http://localhost:8080/api/cars/1
+
